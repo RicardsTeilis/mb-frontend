@@ -1,0 +1,23 @@
+section#users {
+    padding: 50px;
+
+    div {
+        margin: 20px;
+    }
+
+    button {
+        padding: 5px 10px;
+        margin-right: 10px;
+    }
+}
+
+table {
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 50%;
+
+    th, td {
+        padding: 10px;
+        border: 1px solid;
+      }
+  }

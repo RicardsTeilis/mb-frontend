@@ -1,0 +1,427 @@
+$body-font-family: 'Arial';
+$body-font-color:  #6A707B;
+$body-font-weight: 400;
+
+$color-blue: #4066A5;
+$color-lgrey: #E3E3E4;
+$color-black: #131821;
+
+html, body, #root, main {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $body-font-family;
+    font-weight: $body-font-weight;
+    color: $body-font-color;
+}
+
+// * {
+//     border: solid 1px;
+// }
+
+h1 {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 44px;
+    color: $color-black;
+    margin-bottom: 15px;
+}
+
+input[type=text] {
+    background: #FFFFFF;
+    border: 1px solid $color-lgrey;
+    border-left: 4px solid $color-blue;
+    font-family: 'arial';
+    font-size: 16px;
+    padding: 23px 44px;
+    outline: none;
+
+    &:hover, &:hover + button.submit {
+        border-color: $color-blue;
+    }
+
+    &:focus {
+        box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+    }
+}
+
+a {
+    color: $color-black;
+    outline: none;
+
+    &:hover, &:active {
+        color: $color-blue;
+    }
+}
+
+.container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    & * {
+        box-sizing: border-box;
+    }
+
+    .left-side {
+        background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+        width: 40%;
+        min-width: 650px;
+        padding: 100px;
+        min-height: 100vh;
+
+        .content {
+
+            .intro-text {
+                font-size: 16px;
+                margin-bottom: 50px;
+                line-height: 26px;
+            }
+
+            .intro-text.intro-success {
+                padding-left: 0;
+            }
+
+            h1 {
+                margin-top: 230px;
+            }
+
+            h1.h1-thanks {
+                margin-top: 32px;
+                padding-left: 0;
+            }
+
+            h1, .intro-text {
+                padding-left: 36px;
+            }
+
+            .success-div {
+                padding-left: 32px;
+            }
+        }
+
+        hr {
+            margin: 50px 0;
+            border: 0;
+            height: 1px;
+            background-color: $color-lgrey;
+        }
+    }
+
+    .right-side {
+        background: url('../img/image_summer.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        flex-grow: 2;
+        min-height: 100vh;
+        z-index: -2;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 129px;
+
+    .nav-items {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            float: left;
+            margin-right: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            font-style: normal;
+            font-weight: normal;
+            color: $body-font-color;
+        }
+    }
+
+    .logo-box {
+        display: flex;
+        align-items: center;
+
+        .pineapple {
+            margin-top: -15px;
+            margin-right: 15px;
+        }
+    }
+}
+
+.form-box {
+    position: relative;
+}
+
+.input-box {
+    position: relative;
+    z-index: 9;
+    width: 663px;
+    margin-bottom: 54px;
+}
+
+input.newsletter {
+    position: relative;
+    z-index: 10;
+    width: 663px;
+}
+
+button.submit {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    padding: 0 23px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px solid $color-lgrey;
+    border-left: none;
+    outline: none;
+    background-color: #fff;
+    z-index: 12;
+}
+
+.submit-arrow {
+    color: $body-font-color;
+    font-size: 25px;
+}
+
+.error-box {
+    display: block;
+    position: absolute;
+    top: -45px;
+    padding: 10px 30px;
+    background-color: peru;
+    color: #fff;
+    box-shadow: 0px 10px 10px rgba(19, 24, 33, 0.1);
+    opacity: 0.7;
+    z-index: 15;
+}
+
+.tos-box {
+    position: relative;
+    display: flex;
+
+    .check-container {
+        display: block;
+        position: relative;
+        margin: 0 15px 0 36px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .check-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 26px;
+        width: 26px;
+        background: #FFFFFF;
+        border: 1px solid $color-lgrey;
+        border-radius: 3px;
+        outline: none;
+    }
+
+    .check-container:hover input ~ .checkmark {
+        background-color: #f3f3f3;
+    }
+
+    .check-container input:checked ~ .checkmark {
+        background-color: $color-blue;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .check-container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .check-container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .tos-label {
+        padding-top: 4px;
+        margin-left: 23px;
+    }
+}
+
+.social-box {
+    display: flex;
+    justify-content: center;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 46px;
+        height: 46px;
+        margin-right: 20px;
+        border: 2px solid $color-lgrey;
+        border-radius: 45px;
+        color: #b2b5ba;
+        transition: 0.3s;
+
+        &.yt-link {
+            margin-right: 0px;
+        }
+
+        &.fb-link:hover {
+            background-color: #4267B2;
+            border-color: #4267B2;
+            box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        &.in-link:hover {
+            background-color: #C13584;
+            border-color: #C13584;
+            box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        &.tw-link:hover {
+            background-color: #1DA1F2;
+            border-color:#1DA1F2;
+            box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        &.yt-link:hover {
+            background-color: #FF0000;
+            border-color:#FF0000;
+            box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+            color: #fff;
+            transition: 0.3s;
+        }
+    }
+}
+
+@media only screen and (max-width: 850px) {
+
+    .container {
+        background: url('../img/image_summer.png');
+        background-position: center center;
+        justify-content: center;
+        align-items: center;
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 15px 0 15px 20px;
+
+            .pineapple-text {
+                display: none;
+            }
+
+            .pineapple {
+                margin: 0;
+            }
+        }
+
+        .left-side {
+            display: flex;
+            background: none;
+            background-color: none;
+            margin: 0;
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            min-width: 100%;
+            align-items: center;
+
+            .content {
+                background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+                width: 100%;
+                padding: 30px 20px;
+                margin: 0;
+
+                h1 {
+                    padding: 0;
+                    margin: 0 0 10px 0;
+                    font-size: 24px;
+                }
+                
+                .intro-text {
+                    margin-bottom: 20px;
+                    font-size: 14px;
+                }
+
+                .success-div {
+                    padding-left: 0;
+                }
+            }
+
+            hr {
+                margin: 20px 0;
+            }
+        }
+
+        .right-side {
+          display: none;
+        }
+    }
+
+    .input-box {
+        padding: 0;
+        margin: 0 0 15px 0;
+    }
+
+    input.newsletter {
+        padding: 18px 0 18px 15px;
+    }
+
+    .input-box, input.newsletter {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .tos-box .check-container {
+        margin-left: 0;
+    }
+
+    button.submit {
+        padding: 0 15px;
+    }
+
+  }
